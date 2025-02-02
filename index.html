@@ -114,6 +114,21 @@
         </table>
     </section>
 
+    <section>
+        <h2>1. Introduction</h2>
+        <p><strong>2025 ICSV AI Challenge</strong> aims to diagnose the state of drones by detecting anomalous sounds caused by mechanical failures in propellers and motors in noisy environments. In particular, drone sounds that vary depending on operational conditions, such as flight directions, along with background noise, make this task highly challenging.</p>
+        <p>The ultimate goal of the competition is to develop anomaly detection models capable of identifying anomalies in drones using data collected under various conditions.</p>
+        <ul>
+            <li>Participants are required to train deep learning models detecting anomalous drone sounds in test data, through the model training using the training dataset.</li>
+            <li>Reflecting the real-world limitation of collecting a small amount of anomalous drone data, participants will tackle the challenge of training deep learning models exclusively on normal drone data. (<em>Self-Supervised Learning</em>)</li>
+            <li><code>Train dataset</code> includes normal sounds from three types of quadcopter drones maneuvered in six flight directions. <code>Eval dataset</code>, which includes normal and anomalous drone sounds, is also provided for the self-evaluation of developed models. The anomalous sounds were generated from faulty drones with motor or blade tip defects.</li>
+            <li><code>Test dataset</code> will be released one month before the date of submission. <code>Test dataset</code> includes data for final evaluation and introduces two new types of anomalies not provided in the <code>eval dataset</code>.</li>
+            <li>To simulate real-world conditions, all data were augmented with environmental noise recorded in four distinct places.</li>
+            <li>Participants must submit anomaly scores for both the <code>eval dataset</code> and <code>test dataset</code>. The organizing committee will calculate ROC-AUCs based on the submitted anomaly scores, and the weighted average of ROC-AUCs will be used to evaluate the final performance.</li>
+            <li>The use of external datasets for model training is allowed, as long as the datasets are released to the public before 2025. In this case, participants should declare which dataset was employed in the technical report.</li>
+        </ul>
+    </section>
+
     <footer>
         &copy; 2025 ICSV31 AI Challenge | Organized by KSNVE
     </footer>
