@@ -1,4 +1,4 @@
-# ICSV31AIchallenge.github.io
+
 # ICSV31-AI-Challenge (2nd KSNVE AI Challenge)
 
 This repository contains 2025 ICSV31 AI Challenge descriptions and baseline code.
