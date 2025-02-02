@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICSV31-AI-Challenge (2nd KSNVE AI Challenge)</title>
+</head>
+<body>
+    <h1>ICSV31-AI-Challenge (2nd KSNVE AI Challenge)</h1>
+    <p>This repository contains 2025 ICSV31 AI Challenge descriptions and baseline code.</p>
+
+    <h2>Update history</h2>
+    <p>2025-02-05 23:00 (KST): Challenge Launch</p>
+
+    <h2>Overview</h2>
+    <p>The organizing committee of the ICSV31 conference hosts an AI Challenge focusing on diagnosing machine anomalies using acoustic signals. 
+    Participants will train AI models on drone sound signals and identify anomalies from a provided dataset. A grand prize of 1,500 USD will be awarded to the winning team.</p>
+
+    <p>Participation is team-based, and <em>at least one team member must be a registered attendee of the ICSV31 conference</em> at the time of model submission. The conference will also hold a dedicated workshop session for participating teams.</p>
+
+    <h3>📢 Key dates</h3>
+    <table border="1">
+        <tr>
+            <th>Event</th>
+            <th>Date</th>
+        </tr>
+        <tr>
+            <td>Challenge Launch (distribution of task descriptions, train & eval datasets)</td>
+            <td>5 Feb. 2025</td>
+        </tr>
+        <tr>
+            <td>Distribution of test dataset</td>
+            <td>1 April 2025</td>
+        </tr>
+        <tr>
+            <td>Final submission (Anomaly score, trained model, technical report)</td>
+            <td>21 May 2025</td>
+        </tr>
+        <tr>
+            <td>Competition result announcement</td>
+            <td>31 May 2025</td>
+        </tr>
+    </table>
+
+    <h2>1. Introduction</h2>
+    <p><strong>2025 ICSV AI Challenge</strong> aims to diagnose the state of drones by detecting anomalous sounds caused by mechanical failures in propellers and motors in noisy environments. In particular, drone sounds that vary depending on operational conditions, such as flight directions, along with background noise, make this task highly challenging.</p>
+
+    <p>The ultimate goal of the competition is to develop anomaly detection models capable of identifying anomalies in drones using data collected under various conditions.</p>
+
+    <h2>2. Dataset</h2>
+    <p>Dataset for ICSV31 AI Challenge: <a href="https://drive.google.com/file/d/1Lbw1mxgNWTBWjsR1IIzC97UCihdD9-bO/view?usp=sharing">download</a></p>
+    <p>This ICSV31 AI Challenge dataset is based on the <a href="https://arxiv.org/abs/2304.11708">drone noise data</a>, originally constructed by Wonjun Yi, Jung-Woo Choi, Jae-Woo Lee for the drone fault classification task.</p>
+
+    <h2>3. Evaluation metrics</h2>
+    <p>The evaluation metric for this challenge is <strong>ROC-AUC (Receiver Operating Characteristic - Area Under the Curve, AU-ROC)</strong>. ROC-AUC evaluates how well the distributions of normal and anomalous data are separated, independent of any specific decision boundary.</p>
+
+    <h2>4. Baseline systems</h2>
+    <p>This challenge provides a baseline code. However, using or improving the baseline model is not mandatory for participation. Teams are free to develop their own models.</p>
+
+    <h2>5. Submission</h2>
+    <p>Please submit your files to <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEnCw_p9yT6ONhb3zgaesTu2ZxtcYCIuEksVaZzMCmhUVoCw/viewform">Submission link</a></p>
+
+    <h2>Organizers</h2>
+    <p>This challenge is hosted by the KSNVE (Korean Society of Noise and Vibration Engineering). For inquiries, please send an email to <a href="mailto:icsv31aichallenge@gmail.com">Organizing Committee</a>.</p>
+    <ul>
+        <li>📧 <a href="mailto:jwoo@kaist.ac.kr">Jung-Woo Choi</a> (KAIST, School of Electrical Engineering)</li>
+        <li>📧 <a href="mailto:wlgns2533@kaist.ac.kr">Jihoon Choi</a> (KAIST, School of Electrical Engineering)</li>
+        <li>📧 <a href="mailto:seojin@kaist.ac.kr">Seojin Park</a> (KAIST, School of Electrical Engineering)</li>
+        <li>📧 <a href="mailto:yewon@kaist.ac.kr">Yewon Kim</a> (KAIST, School of Electrical Engineering)</li>
+    </ul>
+
+    <p>We look forward to your participation and are happy to assist with any questions!</p>
+
+    <h2>Figures and Visuals</h2>
+    <p><img src="figures/drones.png" alt="Figure1: Three drone types used for the experiment."></p>
+    <p><img src="figures/microphones.png" alt="Figure2: Recording setup."></p>
+    <p><img src="figures/fault.png" alt="Figure3: Faults of drone type B."></p>
+    <p><img src="figures/backgrounds.png" alt="Figure4: Background noise locations."></p>
+    <p><img src="figures/Task%20overview.png" alt="Overview"></p>
+    <p><img src="figures/auc.png" alt="ROC-AUC Explanation"></p>
+
+</body>
+</html>
