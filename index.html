@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ICSV31-AI-Challenge (2nd KSNVE AI Challenge)</title>
+    <title>ICSV31-AI-Challenge (2nd KSNVE AI Challenge)</title
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Noto Sans', sans-serif;
+            font-size: 14px;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
@@ -167,6 +169,24 @@
         </ul>
         <img src="figures/fault.png" alt="Faults" width="500">
         <p><em>Figure 3: Faults of drone type B. (a) propeller cut, (b) dented motor cap (red circle indicates dented part)</em></p>
+
+        <h3>Noise addition</h3>
+        <p>To simulate real-flight conditions, drone sounds were mixed with background noise at a signal-to-noise ratio (SNR) of -5 to 5 dB. The background noise consists of recordings from three distinct outdoor locations (ponds, hills, and gates), as well as industrial noise from ToyADMOS Noise recorded in a real factory environment.</p>
+        <img src="figures/backgrounds.png" alt="Background noise recording locations">
+        <p><em>Figure 4: Three different spots on the university campus chosen for background noise recording: (a) pond, (b) hill, and (c) gate.</em></p>
+
+        <h3>Dataset category</h3>
+        <p>Data is provided in three categories: <span class="highlight">train</span> and <span class="highlight">eval</span> for development, and <span class="highlight">test</span> for competition submission.</p>
+        <blockquote>
+            The <span class="highlight">eval</span> and <span class="highlight">test</span> datasets must not be directly utilized as the training data.
+        </blockquote>
+        <ul>
+            <li>The <span class="highlight">train</span> dataset consists of data from normal drones without defects.</li>
+            <li>The <span class="highlight">eval</span> dataset is provided for assessing the performance of the developed model.</li>
+            <li>The <span class="highlight">test</span> dataset, along with the <span class="highlight">eval</span> dataset, is intended solely for competition submission.</li>
+            <li>The <span class="highlight">eval</span> dataset includes six types of defects: three propeller defects and three motor defects.</li>
+            <li>The <span class="highlight">test</span> dataset contains a total of eight defect types, incorporating one additional propeller defect and one additional motor defect not present in the <span class="highlight">eval</span> dataset.</li>
+        </ul>
     </section>
 
 
