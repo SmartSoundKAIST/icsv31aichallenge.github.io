@@ -191,35 +191,35 @@
         <h4>File Names</h4>
         <p><strong>Train and Evaluation Data (5,400 train files, 1,080 eval files)</strong></p>
         <p>The filenames for the <span class="highlight">train</span> dataset follow the format:</p>
-        <p><strong>[dataset]_[drone_type]_[moving_direction]_[anomaly_flag]_[data_index].wav</strong></p>
+        <p><span class="highlight">[dataset]_[drone_type]_[moving_direction]_[anomaly_flag]_[data_index].wav</span></p>
         <p>where:</p>
         <ul>
-            <li><strong>[dataset]</strong> represents the dataset type (<span class="highlight">train</span> / <span class="highlight">eval</span> / <span class="highlight">test</span>).</li>
-            <li><strong>[drone_type]</strong> denotes the drone type (<span class="highlight">A</span> / <span class="highlight">B</span> / <span class="highlight">C</span>).</li>
-            <li><strong>[moving_direction]</strong> indicates the movement direction (<span class="highlight">Front</span> / <span class="highlight">Back</span> / <span class="highlight">Right</span> / <span class="highlight">Left</span> / <span class="highlight">Clockwise</span> / <span class="highlight">CounterClockwise</span>).</li>
-            <li><strong>[anomaly_flag]</strong> specifies whether the data corresponds to a normal or anomalous drone (<span class="highlight">normal</span> / <span class="highlight">anomaly</span>).</li>
-            <li><strong>[data_index]</strong> is a unique identifier for the data file.</li>
+            <li><span class="highlight">[dataset]</span> represents the dataset type (<span class="highlight">train</span> / <span class="highlight">eval</span> / <span class="highlight">test</span>).</li>
+            <li><span class="highlight">[drone_type]</span> denotes the drone type (<span class="highlight">A</span> / <span class="highlight">B</span> / <span class="highlight">C</span>).</li>
+            <li><span class="highlight">[moving_direction]</span> indicates the movement direction (<span class="highlight">Front</span> / <span class="highlight">Back</span> / <span class="highlight">Right</span> / <span class="highlight">Left</span> / <span class="highlight">Clockwise</span> / <span class="highlight">CounterClockwise</span>).</li>
+            <li><span class="highlight">[anomaly_flag]</span> specifies whether the data corresponds to a normal or anomalous drone (<span class="highlight">normal</span> / <span class="highlight">anomaly</span>).</li>
+            <li><span class="highlight">[data_index]</span> is a unique identifier for the data file.</li>
         </ul>
         
         <p><strong>Test Data (Total 1,440 files)</strong></p>
         <p>The filenames for the <span class="highlight">test</span> dataset follow the format:</p>
-        <p><strong>[dataset]_[drone_type]_[moving_direction]_[data_index].wav</strong></p>
+        <p><span class="highlight">[dataset]_[drone_type]_[moving_direction]_[data_index].wav</span></p>
         
-        <h4>Data specification</h4>
-        <h5>Train dataset</h5>
-        <img src="figures/train_dataset.png" alt="Train dataset">
+        <h3>Data specification</h3>
+        <h4>Train dataset</h4>
+        <img src="figures/train_dataset.png" width="80%" alt="Train dataset">
         <p>- The number of files per drone type is <strong>1,800</strong>.</p>
         <p>- The total number of files is <strong>5,400</strong>.</p>
         
-        <h5>Evaluation dataset</h5>
-        <img src="figures/evaluation_dataset.png" alt="Evaluation dataset">
+        <h4>Evaluation dataset</h4>
+        <img src="figures/evaluation_dataset.png" width="80%" alt="Evaluation dataset">
         <p>- The number of types is <strong>60</strong> per drone type, movement direction, and anomaly type.</p>
         <p>- The total number of files is <strong>60 × 3 (drone types) × 6 (movement directions) = 1,080</strong>.</p>
         <p>- <strong>MF</strong>: Motor Cap Fault</p>
         <p>- <strong>PC</strong>: Propeller Cut</p>
         
-        <h5>Test dataset</h5>
-        <img src="figures/test_dataset.png" alt="Test dataset">
+        <h4>Test dataset</h4>
+        <img src="figures/test_dataset.png" width="80%" alt="Test dataset">
         <p>- The number of types is <strong>80</strong> per drone type, movement direction, and anomaly type.</p>
         <p>- The total number of files is <strong>80 × 3 (drone types) × 6 (movement directions) = 1,440</strong>.</p>
     </section>
