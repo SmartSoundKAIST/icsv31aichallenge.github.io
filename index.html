@@ -224,6 +224,21 @@
         <p>- The total number of files is <strong>80 × 3 (drone types) × 6 (movement directions) = 1,440</strong>.</p>
     </section>
 
+    <section>
+        <h2>3. Evaluation metrics</h2>
+        <p>The evaluation metric for this challenge is <strong>ROC-AUC (Receiver Operating Characteristic - Area Under the Curve, AU-ROC)</strong>. ROC-AUC evaluates how well the distributions of normal and anomalous data are separated, independent of any specific decision boundary.</p>
+        <ul>
+            <li><strong>ROC-AUC</strong> represents the relationship between the False Positive Rate (FPR) and the True Positive Rate (TPR) in the form of a curve, and the area under this curve (AUC) is used as a numerical measure of model performance.</li>
+            <li>The ROC-AUC score ranges from <strong>0 to 1</strong>, where a value closer to <strong>1</strong> indicates that the model is highly effective at distinguishing between normal and anomalous data.</li>
+            <li>An AUC score of <strong>0.5</strong> suggests that the model performs no better than random guessing in separating normal and anomalous data.</li>
+        </ul>
+        <p><strong>ROC-AUC</strong> will be calculated by the <strong>organizing committee</strong> using the <code>.csv</code> files submitted by participants. (Participants are not required to calculate or submit the ROC-AUC score themselves.)</p>
+        <img src="figures/auc.png" alt="ROC-AUC Curve">
+    </section>
+
+
+    
+
 
     <footer>
         &copy; 2025 ICSV31 AI Challenge | Organized by KSNVE
