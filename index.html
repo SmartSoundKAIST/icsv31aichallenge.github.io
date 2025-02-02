@@ -76,6 +76,12 @@
             margin-top: 20px;
             text-align: center;
         }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+        }
     </style>
 </head>
 <body>
@@ -134,6 +140,33 @@
             <li>Participants must submit anomaly scores for both the <span class="highlight">Eval dataset</span> and <span class="highlight">Test dataset</span>. The organizing committee will calculate ROC-AUCs based on the submitted anomaly scores, and the weighted average of ROC-AUCs will be used to evaluate the final performance.</li>
             <li>The use of external datasets for model training is allowed, as long as the datasets are released to the public before 2025. In this case, participants should declare which dataset was employed in the technical report.</li>
         </ul>
+    </section>
+
+    
+    <section>
+        <h2>2. Dataset</h2>
+        <p>Dataset for ICSV31 AI Challenge: <a href="https://drive.google.com/file/d/1Lbw1mxgNWTBWjsR1IIzC97UCihdD9-bO/view?usp=sharing">download</a></p>
+        <p>This ICSV31 AI Challenge dataset is based on the <a href="https://arxiv.org/abs/2304.11708">drone noise data</a>, originally constructed by Wonjun Yi, Jung-Woo Choi, Jae-Woo Lee for the drone fault classification task.</p>
+        <p>W. Yi, J-W. Choi., J-W. Lee, "Sound-based drone fault classification using multi-task learning", Proceedings of the 29th International Congress on Sound and Vibration (ICSV 29), Prague, Czech Republic, July. 2023.</p>
+        <p>The previous dataset was significantly modified for this specific challenge.</p>
+        
+        <h3>Dataset construction</h3>
+        <p>The drones used in this study include the Holy Stone HS720 <strong>(Type A)</strong>, MJX Bugs 12 EIS <strong>(Type B)</strong>, and ZLRC SG906 Pro2 <strong>(Type C)</strong>.</p>
+        <img src="figures/drones.png" alt="Three drone types used for the experiment.">
+        <p><em>Figure 1: Three drone types used for the experiment.</em></p>
+
+        <h3>Noise addition</h3>
+        <p>To simulate real-flight conditions, drone sounds were mixed with background noise at a signal-to-noise ratio (SNR) of -5 to 5 dB.</p>
+        <img src="figures/backgrounds.png" alt="Background noise recording locations">
+        <p><em>Figure 4: Three different spots on the university campus chosen for background noise recording.</em></p>
+
+        <h3>Dataset composition</h3>
+        <img src="figures/train_dataset.png" alt="Train dataset composition">
+        <p><em>Train dataset</em></p>
+        <img src="figures/evaluation_dataset.png" alt="Evaluation dataset composition">
+        <p><em>Evaluation dataset</em></p>
+        <img src="figures/test_dataset.png" alt="Test dataset composition">
+        <p><em>Test dataset</em></p>
     </section>
 
     <footer>
