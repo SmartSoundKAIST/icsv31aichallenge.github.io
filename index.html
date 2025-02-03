@@ -236,9 +236,130 @@
         <img src="figures/auc.png" alt="ROC-AUC Curve">
     </section>
 
-
+    <section>
+      <h2>4. Baseline systems</h2>
     
-
+      <p>This challenge provides a baseline code.<br>
+      However, using or improving the baseline model is not mandatory for participation.<br>
+      Teams are free to develop their own models.</p>
+    
+      <p>The code consists of three files:</p>
+    
+      <ul>
+        <li><strong>train.py</strong>: Trains a deep learning model using the train dataset.</li>
+        <li><strong>eval.py</strong>: Evaluates the model performance using the validation dataset.</li>
+        <li><strong>test.py</strong>: Extracts anomaly scores for the test dataset.</li>
+      </ul>
+    
+      <h4>Model architecture</h4>
+    
+      <p>The baseline model utilizes <strong>WaveNet</strong> to perform a prediction task on spectrograms.<br>
+      WaveNet is primarily used as an audio generation model for anomalous sound detection. Due to its exponentially increasing dilation rate in each residual block, WaveNet has a wide receptive field.</p>
+    
+      <p>In the baseline model, WaveNet performs causal convolution to predict future spectral frames in the spectrogram.<br>
+      The model trained to minimize the prediction error of normal data tends to produce significantly higher prediction errors on anomalous data. This characteristic is leveraged for anomaly detection.</p>
+    
+      <h4>Anomaly score</h4>
+    
+      <p>The <strong>anomaly score</strong> is computed using the mean squared error (MSE) between the target and predicted spectrograms.</p>
+    
+      <p>Let the input spectrogram be <span style="font-family: monospace;">X = [x<sub>1</sub>, ..., x<sub>T</sub>] ∈ R<sup>F × T</sup></span>, where <strong>F</strong> and <strong>T</strong> represent the <em>frequency</em> and <em>time</em> dimensions of the spectrogram, respectively.<br>
+      The model takes input data of length equal to the receptive field, <span style="font-family: monospace;">[x<sub>1</sub>, ..., x<sub>l</sub>]</span>, and predicts the next spectral frame <span style="font-family: monospace;">x̂<sub>l+1</sub></span>. This is formulated as:<br>
+      <span style="font-family: monospace;">x̂<sub>t+1</sub> = ψ<sub>φ</sub>(x<sub>t-l+1</sub>, ..., x<sub>t</sub>).</span></p>
+    
+      <p>Given the input data <span style="font-family: monospace;">X = [x<sub>1</sub>, ..., x<sub>T</sub>]</span>, the model predicts <span style="font-family: monospace;">X̂ = [x̂<sub>l+1</sub>, ..., x̂<sub>T+1</sub>]</span>.<br>
+      The <strong>anomaly score</strong> for each data point is computed as:<br>
+      <span style="font-family: monospace;">Score = (1 / (T - l)) Σ<sub>t=l+1</sub><sup>T</sup> ||x<sub>t</sub> - x̂<sub>t</sub>||²</span>, where the mean squared error (MSE) measures the deviation between the actual and predicted spectrogram frames.</p>
+    
+      <h4>Performance of baseline model</h4>
+    
+      <p>The <strong>baseline model</strong> was trained for <strong>100 epochs</strong> with a <strong>learning rate of 1e-3</strong> and a <strong>batch size of 64</strong>.</p>
+    
+      <p>The anomaly detection performance of the baseline model on the evaluation dataset is as follows:</p>
+    
+      <table border="1">
+        <tr>
+          <th>Drone</th>
+          <th>A</th>
+          <th>B</th>
+          <th>C</th>
+        </tr>
+        <tr>
+          <td>AUC (%)</td>
+          <td>69.62</td>
+          <td>74.88</td>
+          <td>67.41</td>
+        </tr>
+      </table>
+    </section>
+    
+    <section>
+      <h2>5. Submission</h2>
+    
+      <p>Please submit your files to <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEnCw_p9yT6ONhb3zgaesTu2ZxtcYCIuEksVaZzMCmhUVoCw/viewform">Submission link</a></p>
+    
+      <img src="figures/Task%20overview.png" alt="overview" width="400"/>
+    
+      <p>Participants must submit <strong>four files</strong> for challenge participation:</p>
+    
+      <ol>
+        <li><strong>Evaluation dataset performance</strong> (<span style="font-family: monospace;">eval_score.csv</span>)</li>
+        <li><strong>Test dataset performance</strong> (<span style="font-family: monospace;">test_score.csv</span>)</li>
+        <li><strong>Reproducible training and evaluation code</strong> (<span style="font-family: monospace;">.zip</span>)</li>
+        <li><strong>Technical report</strong> (<span style="font-family: monospace;">.pdf</span>)</li>
+      </ol>
+    
+      <p>The <span style="font-family: monospace;">eval.py</span> and <span style="font-family: monospace;">test.py</span> files generate and save the <strong>anomaly scores</strong> for the evaluation and test datasets as <span style="font-family: monospace;">eval_score.csv</span> and <span style="font-family: monospace;">test_score.csv</span>, respectively.<br>
+      The <strong>organizers</strong> will use these files to compare the performance of participants' models.</p>
+    
+      <p>Participants must submit code that can <strong>reproduce the model’s performance</strong>. This process is intended to verify the reproducibility of the submitted code and will not be used for any other purpose. The copyright of the code fully belongs to the author.<br>
+      The trained model file should be included in a compressed <strong>zip file</strong>, which must contain all necessary components to generate <span style="font-family: monospace;">eval_score.csv</span> and <span style="font-family: monospace;">test_score.csv</span>.</p>
+    
+      <p>The <strong>technical report</strong> should describe:</p>
+    
+      <ul>
+        <li>The proposed anomaly detection model architecture</li>
+        <li>The model training process</li>
+        <li>The anomaly detection methodology</li>
+      </ul>
+    
+      <p>The technical report must be formatted according to the <a href="https://icsv31.org/index.php?va=viewpage&vaid=247">ICSV paper guideline</a>.<br>
+      All reports submitted to the challenge will be included in the conference proceeding as <strong>non-referred papers</strong>.<br>
+      Participants do not need to submit the report through the ICSV website separately.</p>
+    </section>
+    
+    <section>
+      <h2>6. Ranking</h2>
+    
+      <p>The final performance score <span style="font-family: monospace;">S</span> is calculated using the <strong>AUC</strong> scores of three drones (<strong>A, B, and C</strong>). First, the average AUC scores for the evaluation and test datasets are computed as follows:</p>
+    
+      <p><span style="font-family: monospace;">S<sub>eval</sub> = (1 / 3) Σ<sub>i ∈ {A, B, C}</sub> AUC<sub>eval, i</sub></span></p>
+    
+      <p><span style="font-family: monospace;">S<sub>test</sub> = (1 / 3) Σ<sub>i ∈ {A, B, C}</sub> AUC<sub>test, i</sub></span></p>
+    
+      <p>The final performance score <span style="font-family: monospace;">S</span> is then calculated as a weighted sum of the evaluation and test scores, with <strong>30% weight for the evaluation dataset</strong> and <strong>70% weight for the test dataset</strong>:</p>
+    
+      <p><span style="font-family: monospace;">S = 0.3 × S<sub>eval</sub> + 0.7 × S<sub>test</sub></span></p>
+    
+      <p>The final ranking will be determined based on this weighted score.</p>
+    </section>
+    
+    <section>
+      <h2>Organizers</h2>
+    
+      <p>This challenge is hosted by the KSNVE (Korean Society of Noise and Vibration Engineering). For inquiries, please send an email to <a href="mailto:icsv31aichallenge@gmail.com">Organizing Committee (icsv31aichallenge@gmail.com)</a>.</p>
+    
+      <p><strong>Challenge organizers</strong></p>
+    
+      <ul>
+        <li>📧 <a href="mailto:jwoo@kaist.ac.kr"><strong>Jung-Woo Choi</strong></a> (KAIST, School of Electrical Engineering)</li>
+        <li>📧 <a href="mailto:wlgns2533@kaist.ac.kr"><strong>Jihoon Choi</strong></a> (KAIST, School of Electrical Engineering)</li>
+        <li>📧 <a href="mailto:seojin@kaist.ac.kr"><strong>Seojin Park</strong></a> (KAIST, School of Electrical Engineering)</li>
+        <li>📧 <a href="mailto:yewon@kaist.ac.kr"><strong>Yewon Kim</strong></a> (KAIST, School of Electrical Engineering)</li>
+      </ul>
+    
+      <p>We look forward to your participation and are happy to assist with any questions!</p>
+    </section>
 
     <footer>
         &copy; 2025 ICSV31 AI Challenge | Organized by KSNVE
